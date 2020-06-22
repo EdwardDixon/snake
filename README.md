@@ -5,7 +5,7 @@ This is a PyTorch implementation of the `snake` activation function from the pap
 
 A few variations of the function are discussed in the paper, this package implements:
 
- <img src="https://render.githubusercontent.com/render/math?math=x+\frac{1}{a}sin^{2}(ax)">
+ <img src="https://render.githubusercontent.com/render/math?math=x%2B\frac{1}{a}sin^{2}(ax)">
 
 ## Installation
 From the main repo folder, run `python setup.py install`
