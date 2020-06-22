@@ -2,7 +2,7 @@ import torch
 from torch import nn, sin, pow
 from torch.nn import Parameter
 
-class snake(nn.Module):
+class Snake(nn.Module):
     '''
     Implementation of a rather serpentine sine-based periodic activation function 
 
@@ -36,7 +36,7 @@ class snake(nn.Module):
             consider starting lower e.g. 0.5 if you think not, but don't worry, 
             alpha will be trained along with the rest of your model. 
         '''
-        super(snake,self).__init__()
+        super(Snake,self).__init__()
         self.in_features = in_features
 
         # initialize alpha
