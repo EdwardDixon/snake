@@ -1,4 +1,6 @@
+import torch 
 from torch import nn, sin, pow
+from torch.nn import Parameter
 
 class snake(nn.Module):
     '''
@@ -22,7 +24,7 @@ class snake(nn.Module):
         >>> x = torch.randn(256)
         >>> x = a1(x)
     '''
-    def __init__(self, in_features, alpha = 1):
+    def __init__(self, in_features, alpha = 1.0, alpha_trainable = True):
         '''
         Initialization.
         INPUT:
@@ -40,7 +42,7 @@ class snake(nn.Module):
         # initialize alpha
         self.alpha = Parameter(torch.tensor(alpha)) # create a tensor out of alpha
             
-        self.alpha.requiresGrad = True # set requiresGrad to true!
+        self.alpha.requiresGrad = alpha_trainable # Usually we'll want to train alpha, but maybe for some experiments we won't?
 
     def forward(self, x):
         '''
