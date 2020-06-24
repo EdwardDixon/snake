@@ -14,10 +14,10 @@ Snake is **periodic**, but _also_ monotonic. To see how **snake** behaves for a 
 From the main repo folder, run `python setup.py install`
 
 ## Usage
-Fairly easy really `from snake.activations import Snake`.  The `Snake` constructor [(code here)](snake/activations.py) has an optional **learnable** parameter alpha which defaults to 1.  The authors of the paper find values between 5 and 50 work quite well for "known-periodic" data, while for better results with non-periodic data, you should choose a small value like 0.2.  The constructor also takes an `alpha_learnable` parameter which defaults to `True`, so that you can disable "learnability" if your experiments so require.
+Fairly easy really `from snake.activations import Snake`.  The `Snake` constructor [(code here)](snake/activations.py) has an optional **learnable** parameter alpha which defaults to 1.  The authors of the paper find values between 5 and 50 work quite well for "known-periodic" data, while for better results with non-periodic data, you should choose a small value like 0.2.  The constructor also takes an `alpha_learnable` parameter which defaults to `True`, so that you can disable "learnability" if your experiments so require.  
 
 ## Sample code
-There's a notebook, still quite rough - [example.ipynb](example.ipynb).  
+There's a notebook, still quite rough - [example.ipynb](example.ipynb).  Early indications are that good choices of hyperparameters are quite important for best results (though snake's own parameter trains quite readily).
 
 
 ## Acknowledgements
