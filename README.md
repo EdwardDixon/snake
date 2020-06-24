@@ -1,7 +1,7 @@
 [![PyPI version](https://badge.fury.io/py/torch-snake.svg)](https://badge.fury.io/py/torch-snake)
 
 # Snake
-Inspired by ["Neural Networks Fail to Learn Periodic Functions and How to Fix It"](https://arxiv.org/abs/2006.08195).
+Based on ["Neural Networks Fail to Learn Periodic Functions and How to Fix It"](https://arxiv.org/abs/2006.08195) by Liu Ziyin, Tilman Hartwig, Masahito Ueda
 
 This is a PyTorch implementation of the `snake` activation function from the paper - or at least I _think_ it is, no affiliation with the authors, use at your own risk, etc., etc.
 
