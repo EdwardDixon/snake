@@ -40,7 +40,7 @@ class Snake(nn.Module):
         self.in_features = in_features
 
         # initialize alpha
-        self.alpha = Parameter(torch.tensor(alpha)) # create a tensor out of alpha
+        self.alpha = Parameter(torch.ones(in_features) * alpha) # create a tensor out of alpha
             
         self.alpha.requiresGrad = alpha_trainable # Usually we'll want to train alpha, but maybe for some experiments we won't?
 
@@ -49,10 +49,9 @@ class Snake(nn.Module):
         Forward pass of the function.
         Applies the function to the input elementwise.
 
-        Snake ∶= x + 1/a * sin^2 (x/a)
+        Snake ∶= x + 1/a * sin^2 (xa)
         '''
-        if (self.alpha == 0.0):
-            return x
+        no_div_by_zero = 0.000000001
 
-        return  x + (1.0/self.alpha) * pow(sin(x / self.alpha), 2)
+        return  x + (1.0/(self.alpha + no_div_by_zero)) * pow(sin(x * self.alpha), 2)
 
