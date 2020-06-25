@@ -10,6 +10,7 @@ A few variations of the function are discussed in the paper, this package implem
  <img src="https://render.githubusercontent.com/render/math?math=x%2B\frac{1}{a}sin^{2}(ax)">
  
 Snake is **periodic**, but _also_ monotonic. To see how **snake** behaves for a range of x given various choices of `a`, watch this video:
+
 [![snake activation function gets wriggly for higher a](http://img.youtube.com/vi/5g7-8mtywuk/0.jpg)](http://www.youtube.com/watch?v=5g7-8mtywuk "Snake Activation")
 
 ## Installation
