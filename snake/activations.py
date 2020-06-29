@@ -1,6 +1,7 @@
 import torch 
 from torch import nn, sin, pow
 from torch.nn import Parameter
+from torch.distributions.exponential import Exponential
 
 class Snake(nn.Module):
     '''
@@ -24,7 +25,7 @@ class Snake(nn.Module):
         >>> x = torch.randn(256)
         >>> x = a1(x)
     '''
-    def __init__(self, in_features, alpha = 1.0, alpha_trainable = True):
+    def __init__(self, in_features, alpha = None, alpha_trainable = True):
         '''
         Initialization.
         INPUT:
@@ -40,9 +41,14 @@ class Snake(nn.Module):
         self.in_features = in_features
 
         # initialize alpha
-        self.alpha = Parameter(torch.ones(in_features) * alpha) # create a tensor out of alpha
-            
+        if alpha is not None:
+            self.alpha = Parameter(torch.ones(in_features) * alpha) # create a tensor out of alpha
+        else:            
+            m = Exponential(torch.tensor([0.1]))
+            self.alpha = Parameter(m.sample(in_features)) # Random init = mix of frequencies
+
         self.alpha.requiresGrad = alpha_trainable # Usually we'll want to train alpha, but maybe for some experiments we won't?
+
 
     def forward(self, x):
         '''
@@ -51,7 +57,5 @@ class Snake(nn.Module):
 
         Snake ∶= x + 1/a * sin^2 (xa)
         '''
-        no_div_by_zero = 0.000000001
-
-        return  x + (1.0/(self.alpha + no_div_by_zero)) * pow(sin(x * self.alpha), 2)
+        return  x + (1.0/self.alpha) * pow(sin(x * self.alpha), 2)
 
