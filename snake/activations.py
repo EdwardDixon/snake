@@ -49,7 +49,7 @@ class Snake(nn.Module):
             self.a = Parameter(torch.ones(self.in_features) * a) # create a tensor out of alpha
         else:            
             m = Exponential(torch.tensor([0.1]))
-            self.a = Parameter(m.rsample(self.in_features)).squeeze() # random init = mix of frequencies
+            self.a = Parameter((m.rsample(self.in_features)).squeeze()) # random init = mix of frequencies
 
         self.a.requiresGrad = trainable # set the training of `a` to true
 
