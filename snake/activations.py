@@ -109,12 +109,16 @@ class Snake(Module):
             in_features if isinstance(in_features, list) else [in_features]
         )
 
-        # Initialize `a`
-        if a is not None:
-            initial_a = torch.full(self.in_features, a)
+        # Ensure initial_a is a floating point tensor
+        if isinstance(in_features, int):
+            initial_a = torch.full((in_features,), a, dtype=torch.float32)  # Explicitly set dtype to float32
         else:
-            m = Exponential(torch.tensor([0.1]))
-            initial_a = m.rsample(self.in_features).squeeze()
+            initial_a = torch.full(in_features, a, dtype=torch.float32)  # Assuming in_features is a list/tuple of dimensions
+
+        if trainable:
+            self.a = Parameter(initial_a)
+        else:
+            self.register_buffer('a', initial_a)
 
         if trainable:
             self.a = Parameter(initial_a)
