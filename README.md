@@ -7,7 +7,8 @@ This is a PyTorch implementation of the `snake` activation function from the pap
 
 A few variations of the function are discussed in the paper, this package implements:
 
- <img src="https://render.githubusercontent.com/render/math?math=x%2B\frac{1}{a}sin^{2}(ax)">
+<img src="expression.svg" alt="Math Expression" style="width: 100%; height: auto; display: block; margin: 0 auto;">
+
  
 Snake is **periodic**, but _also_ monotonic. To see how **snake** behaves for a range of x given various choices of `a`, watch this animation:
 
