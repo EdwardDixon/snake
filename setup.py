@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="torch-snake", # Replace with your own username
-    version="1.0.0",
+    version="1.0.1",
     author="Edward Dixon",
     author_email="dixon.edward@gmail.com",
     description="Sample PyTorch implementation of the snake activation function",
