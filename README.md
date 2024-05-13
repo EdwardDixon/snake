@@ -3,15 +3,15 @@
 # Snake
 Based on ["Neural Networks Fail to Learn Periodic Functions and How to Fix It"](https://arxiv.org/abs/2006.08195) by Liu Ziyin, Tilman Hartwig, Masahito Ueda
 
-This is a PyTorch implementation of the `snake` activation function from the paper - or at least I _think_ it is, no affiliation with the authors, use at your own risk, etc., etc.
+This is a PyTorch implementation of the `snake` activation function from the paper - or at least I _think_ it is, no affiliation with the authors, use at your own risk, etc., etc.  Huge thanks to contributors [klae01](https://github.com/klae01) and [fedebotu](https://github.com/fedebotu) who made big improvments to the code.
 
 A few variations of the function are discussed in the paper, this package implements:
 
  <img src="https://render.githubusercontent.com/render/math?math=x%2B\frac{1}{a}sin^{2}(ax)">
  
-Snake is **periodic**, but _also_ monotonic. To see how **snake** behaves for a range of x given various choices of `a`, watch this video:
+Snake is **periodic**, but _also_ monotonic. To see how **snake** behaves for a range of x given various choices of `a`, watch this animation:
 
-[![snake activation function gets wriggly for higher a](http://img.youtube.com/vi/5g7-8mtywuk/0.jpg)](http://www.youtube.com/watch?v=5g7-8mtywuk "Snake Activation")
+<img src="snake_alphas.png">
 
 ## Installation
 Two methods:
