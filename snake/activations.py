@@ -114,7 +114,7 @@ class Snake(Module):
 
         if a is None:
             # Initialize with Exponential distribution when no value is provided
-            initial_a = Exponential(torch.tensor(1.0)).sample(shape)
+            initial_a = Exponential(1.0).sample(shape)
         else:
             initial_a = torch.full(shape, float(a), dtype=torch.float32)
 
